@@ -13,7 +13,7 @@ class Manager
     {
         $baseConfig = config('youzan.base');
         foreach (config('youzan.apps') as $name => $config) {
-            app()->singleton($name, function() use ($config) {
+            app()->singleton('youzan.'.$name, function() use ($config, $baseConfig) {
                 return new Youzan(array_merge($baseConfig, $config));
             });
         }
@@ -26,7 +26,7 @@ class Manager
      */
     public function app(string $name)
     {
-        if (!isset(config('youzan.apps.'.$name))) {
+        if (empty(config('youzan.apps.'.$name))) {
             throw new Exception(sprintf("No youzan app named '%s' found.", $name));
         }
 
@@ -35,6 +35,6 @@ class Manager
 
     public function __call($method, $args)
     {
-        return call_user_func_array(app('youzhan.'.config('youzhan.default_app')), $args);
+        return call_user_func_array([app('youzan.'.config('youzan.default_app')), $method], $args);
     }
 }

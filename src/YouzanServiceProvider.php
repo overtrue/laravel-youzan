@@ -27,7 +27,7 @@ class YouzanServiceProvider extends ServiceProvider
             return new Manager();
         });
 
-        $this->app->alias(Manager::class, 'payment');
+        $this->app->alias(Manager::class, 'youzan');
     }
 
     /**
@@ -35,6 +35,6 @@ class YouzanServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [Manager::class, 'payment'];
+        return [Manager::class, 'youzan'];
     }
 }
