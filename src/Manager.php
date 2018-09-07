@@ -3,18 +3,24 @@
 namespace Overtrue\LaravelYouzan;
 
 use \Hanson\Youzan\Youzan;
+use Overtrue\Youzan\Client;
 
 /**
  * Class Manager
  */
 class Manager
 {
+    /**
+     * Manager constructor.
+     */
     public function __construct()
     {
         $baseConfig = config('youzan.base');
         foreach (config('youzan.apps') as $name => $config) {
             app()->singleton('youzan.'.$name, function() use ($config, $baseConfig) {
-                return new Youzan(array_merge($baseConfig, $config));
+                $config = array_merge($baseConfig, $config);
+
+                return new Client($config['client_id'], $config['client_secret'], $config['kdt_id'], $config);
             });
         }
     }
@@ -22,7 +28,7 @@ class Manager
     /**
      * @param  string $name
      *
-     * @return \Hanson\Youzan\Youzan
+     * @return \Overtrue\Youzan\Client
      */
     public function app(string $name)
     {
@@ -33,6 +39,12 @@ class Manager
         return app('youzan.'.$name);
     }
 
+    /**
+     * @param string $method
+     * @param array  $args
+     *
+     * @return mixed
+     */
     public function __call($method, $args)
     {
         return call_user_func_array([app('youzan.'.config('youzan.default_app')), $method], $args);

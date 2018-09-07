@@ -20,7 +20,6 @@ return [
         'default' => [
             'client_id' => 'XXXXXXXXX',
             'client_secret' => 'XXXXXXXXX',
-            'type' => \Hanson\Youzan\Youzan::PERSONAL, // 自用型应用
             'kdt_id' => '10000000', // store_id
         ],
         // 'another_app' => [

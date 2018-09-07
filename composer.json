@@ -3,7 +3,7 @@
     "description": "Youzan wrapper for Laravel.",
     "type": "library",
     "require": {
-        "hanson/youzan-sdk": "~2.0"
+        "overtrue/youzan": "dev-master"
     },
     "license": "MIT",
     "authors": [

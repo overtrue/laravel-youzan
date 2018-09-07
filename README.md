@@ -40,7 +40,7 @@ app('youzan')->request('youzan.shop.create', ['name' => 'Test store']);
 app('youzan')->app('pet-store')->request('youzan.trade.get', ['tid' => 'xxxxxxx']);
 ```
 
-[More usage](https://github.com/HanSon/youzan-sdk)
+[More usage](https://github.com/overtrue/youzan)
 
 ## License
 
