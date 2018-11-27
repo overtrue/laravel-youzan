@@ -24,20 +24,20 @@ Edit the `config/youzan.php` with right content.
 
 ```php
 # default app
-Youzan::request('youzan.shop.create', ['name' => 'Test store']);
+Youzan::post('youzan.shop.create', ['name' => 'Test store']);
 
 # specify app name
-Youzan::app('pet-store')->request('youzan.trade.get', ['tid' => 'xxxxxxx']);
+Youzan::app('pet-store')->get('youzan.trade.get', ['tid' => 'xxxxxxx']);
 ```
 
 2. Use `app()` function helper.
 
 ```php
 # default app
-app('youzan')->request('youzan.shop.create', ['name' => 'Test store']);
+app('youzan')->post('youzan.shop.create', ['name' => 'Test store']);
 
 # specify app name
-app('youzan')->app('pet-store')->request('youzan.trade.get', ['tid' => 'xxxxxxx']);
+app('youzan')->app('pet-store')->get('youzan.trade.get', ['tid' => 'xxxxxxx']);
 ```
 
 [More usage](https://github.com/overtrue/youzan)
