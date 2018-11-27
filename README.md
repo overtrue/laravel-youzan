@@ -1,4 +1,4 @@
-# Laravel-youzan
+# Laravel Youzan
 
 Youzan wrapper for Laravel.
 
