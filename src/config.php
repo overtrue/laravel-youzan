@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the overtrue/laravel-youzan.
+ *
+ * (c) overtrue <i@overtrue.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 return [
     // Default app name
     'default_app' => 'default',
@@ -7,12 +16,6 @@ return [
     // Base configuration
     'base' => [
         'debug' => true,
-        'log' => [
-            'name' => 'youzan',
-            'file' => __DIR__.'/youzan.log',
-            'level'      => 'debug',
-            'permission' => 0777,
-        ]
     ],
 
     // Applications
@@ -33,5 +36,5 @@ return [
         //     'client_secret' => '',
         //     'type' => \Hanson\Youzan\Youzan::PLATFORM,
         // ],
-    ]
+    ],
 ];

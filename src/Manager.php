@@ -1,12 +1,20 @@
 <?php
 
+/*
+ * This file is part of the overtrue/laravel-youzan.
+ *
+ * (c) overtrue <i@overtrue.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Overtrue\LaravelYouzan;
 
-use \Hanson\Youzan\Youzan;
 use Overtrue\Youzan\Client;
 
 /**
- * Class Manager
+ * Class Manager.
  */
 class Manager
 {
@@ -17,7 +25,7 @@ class Manager
     {
         $baseConfig = config('youzan.base');
         foreach (config('youzan.apps') as $name => $config) {
-            app()->singleton('youzan.'.$name, function() use ($config, $baseConfig) {
+            app()->singleton('youzan.'.$name, function () use ($config, $baseConfig) {
                 $config = array_merge($baseConfig, $config);
 
                 return new Client($config['client_id'], $config['client_secret'], $config['kdt_id'], $config);
@@ -26,7 +34,7 @@ class Manager
     }
 
     /**
-     * @param  string $name
+     * @param string $name
      *
      * @return \Overtrue\Youzan\Client
      */
