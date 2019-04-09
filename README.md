@@ -2,6 +2,8 @@
 
 Youzan wrapper for Laravel.
 
+> 🚧警告！此 SDK 目前仅支持自用型应用，不支持其它类型的应用接入。 由于有赞的不人道的 996 策略，以及在没有通知用户的情况下关闭了个人收款渠道，现决定不再维护他们家任何相关 SDK，谢谢！
+
 ## Installing
 
 1. require package.
